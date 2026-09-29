@@ -3,7 +3,7 @@ import fitz
 from sqlalchemy.orm import Session
 from fastapi import UploadFile
 from typing import Dict, Any, List
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from app.models.all_models import Document, DocumentChunk
 from app.services.embedding_service import EmbeddingService
 from app.config.settings import settings
