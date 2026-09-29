@@ -59,7 +59,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 flex-shrink-0">
-              <img src="/logo.png" alt="Manak Logo" className="h-10 object-contain bg-white rounded-xl border border-gray-300 p-1 shadow-sm" />
+              <img src="/logo.png" alt="Manak Logo" className="h-12 w-auto object-contain" />
             </Link>
 
             {/* Desktop nav links */}
