@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <img src={logoImg} alt="Manak Logo" className="h-12 w-auto object-contain" />
+              <img src={logoImg} alt="Manak Logo" className="h-12 w-auto object-contain rounded-lg" />
             </div>
             <p className="text-sm text-blue-200 leading-relaxed mb-4">
               An AI-powered platform to help MSMEs, manufacturers, consumers, and students navigate BIS standards and certification requirements.
