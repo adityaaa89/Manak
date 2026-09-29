@@ -1,0 +1,185 @@
+[
+  {
+    "scheme_id": "SCHEME_I",
+    "scheme": "Scheme-I",
+    "title": "Product Certification Scheme for use of ISI Mark",
+    "authority": "Bureau of Indian Standards",
+    "regulation": "BIS (Conformity Assessment) Regulations, 2018",
+    "purpose": "To provide BIS licence for manufacturers to use the Standard Mark (ISI Mark) on products conforming to applicable Indian Standards.",
+    "applicable_for": [
+      "Products covered under mandatory BIS certification requirements",
+      "Products notified under Quality Control Orders (QCOs)",
+      "Products where manufacturers voluntarily seek BIS certification"
+    ],
+    "certification_type": "Licence",
+    "marking": {
+      "mark": "ISI Mark",
+      "identifier": "CM/L Number",
+      "description": "A unique licence number issued by BIS to identify certified manufacturers and products."
+    },
+    "process_steps": [
+      {
+        "step": 1,
+        "title": "Identify Applicable Indian Standard",
+        "description": "Determine the applicable IS standard for the product based on product category, specifications and intended use."
+      },
+      {
+        "step": 2,
+        "title": "Check QCO Applicability",
+        "description": "Verify whether the product standard is covered under a Quality Control Order and whether BIS certification is mandatory."
+      },
+      {
+        "step": 3,
+        "title": "Submit BIS Licence Application",
+        "description": "Manufacturer submits application details including product information, factory details and required documents."
+      },
+      {
+        "step": 4,
+        "title": "Product Testing",
+        "description": "Product samples are tested according to the applicable Indian Standard requirements through BIS recognised laboratories."
+      },
+      {
+        "step": 5,
+        "title": "Factory Inspection",
+        "description": "BIS officer evaluates manufacturing infrastructure, production process, testing facilities and quality control systems."
+      },
+      {
+        "step": 6,
+        "title": "Sample Evaluation",
+        "description": "Test reports and inspection findings are reviewed by BIS for compliance verification."
+      },
+      {
+        "step": 7,
+        "title": "Grant of Licence",
+        "description": "After successful evaluation, BIS grants the licence allowing use of the ISI Mark."
+      },
+      {
+        "step": 8,
+        "title": "Surveillance",
+        "description": "BIS performs periodic surveillance activities including factory visits and market surveillance to ensure continued compliance."
+      }
+    ],
+    "required_documents": [
+      "Application form",
+      "Manufacturing process details",
+      "Factory layout plan",
+      "Details of manufacturing machinery",
+      "Details of testing facilities",
+      "Quality control plan",
+      "Raw material specifications",
+      "Product technical specifications",
+      "Test reports",
+      "Factory inspection documents"
+    ],
+    "manufacturer_requirements": [
+      "Adequate manufacturing infrastructure",
+      "Quality control system",
+      "Required testing facilities or access to recognised laboratories",
+      "Compliance with applicable Indian Standard requirements"
+    ],
+    "cost_components": [
+      "Application fee",
+      "Processing fee",
+      "Inspection charges",
+      "Testing charges",
+      "Licence fee",
+      "Renewal charges"
+    ],
+    "validity": {
+      "initial_licence": "As per BIS certification regulations",
+      "renewal": "Licence renewal required as per BIS guidelines"
+    },
+    "related_documents": [
+      "BIS_Conformity_Assessment_Regulations_2018.pdf",
+      "BIS_Grant_of_Licence_Guidelines.pdf",
+      "BIS_Scheme_I_Additional_Guidelines.pdf",
+      "BIS_Factory_Surveillance_Guidelines.pdf",
+      "BIS_Product_Non_Conformity_Guidelines.pdf"
+    ],
+    "example_products": [
+      "Electric Kettle",
+      "Pressure Cooker",
+      "LED Bulb",
+      "Electrical Appliances"
+    ]
+  },
+  {
+    "scheme_id": "SCHEME_IV",
+    "scheme": "Scheme-IV",
+    "title": "Product Certification Scheme for Grant of Certificate of Conformity",
+    "authority": "Bureau of Indian Standards",
+    "regulation": "BIS (Conformity Assessment) Regulations, 2018",
+    "purpose": "To provide Certificate of Conformity for products where this scheme is applicable instead of a regular BIS licence.",
+    "certification_type": "Certificate of Conformity",
+    "process_steps": [
+      {
+        "step": 1,
+        "title": "Identify Applicable Standard",
+        "description": "Determine the relevant Indian Standard and conformity requirements."
+      },
+      {
+        "step": 2,
+        "title": "Submit Application",
+        "description": "Applicant submits required details and technical information."
+      },
+      {
+        "step": 3,
+        "title": "Assessment and Testing",
+        "description": "BIS evaluates product compliance through assessment and testing."
+      },
+      {
+        "step": 4,
+        "title": "Grant of Certificate",
+        "description": "Certificate of Conformity is issued after successful verification."
+      }
+    ],
+    "required_documents": [
+      "Application details",
+      "Product specifications",
+      "Technical documents",
+      "Testing reports",
+      "Supporting compliance documents"
+    ],
+    "related_documents": [
+      "BIS_Conformity_Assessment_Regulations_2018.pdf"
+    ]
+  },
+  {
+    "certification_status": {
+      "mandatory": {
+        "description": "Certification is compulsory when a product is covered under a Quality Control Order.",
+        "next_action": "Manufacturer must obtain BIS certification before selling the product."
+      },
+      "voluntary": {
+        "description": "Manufacturer may voluntarily apply for BIS certification to demonstrate product quality.",
+        "next_action": "Manufacturer can apply through the applicable certification scheme."
+      }
+    }
+  },
+  {
+    "journey_mapping": {
+      "product_discovery": {
+        "input": "Product description provided by manufacturer",
+        "output": "Applicable Indian Standard"
+      },
+      "qco_check": {
+        "input": "Standard number",
+        "output": "Mandatory or Voluntary certification status"
+      },
+      "certification_guidance": {
+        "input": "Applicable scheme",
+        "output": "Certification process roadmap"
+      },
+      "blueprint_generation": {
+        "input": [
+          "Product",
+          "Standard",
+          "QCO Status",
+          "Testing Requirements",
+          "Factory Readiness"
+        ],
+        "output": "Complete compliance roadmap"
+      }
+    }
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "q1",
+    "expected_document_keywords": ["qco_reference.json", "standard_qco_mapping.json", "qco"],
+    "expected_category": "QCO",
+    "must_mention": ["mandatory"]
+  },
+  {
+    "id": "q2",
+    "expected_document_keywords": ["certification guidelines", "scheme-i", "certification_reference.json"],
+    "expected_category": "Certification",
+    "must_mention": ["licence", "application"]
+  },
+  {
+    "id": "q3",
+    "expected_document_keywords": ["sti", "is 302", "testing"],
+    "expected_category": "Testing",
+    "must_mention": ["test", "laboratory"]
+  },
+  {
+    "id": "q4",
+    "expected_document_keywords": ["laboratory", "recognised-laboratories.json"],
+    "expected_category": "Testing",
+    "must_mention": ["laboratory", "test"]
+  }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "standard_number": "IS 302-2-15:2025",
+    "product": "Electric Kettle",
+    "qco_status": "Mandatory",
+    "qco_document": "QCO_Safety_Household_Electrical_Appliances_2026.pdf",
+    "effective_date": "2026-04-06",
+    "quality_control_order": "Safety of Household, Commercial and Similar Electrical Appliances Quality Control Order, 2026",
+    "reason": "Product standard is covered under mandatory BIS certification requirements.",
+    "enterprise_notes": {
+      "micro": "Check applicable transition provisions",
+      "small": "Check applicable transition provisions",
+      "medium_large": "Mandatory compliance required"
+    }
+  },
+  {
+    "standard_number": "IS 302-1:2008",
+    "product": "Household Electrical Appliances",
+    "qco_status": "Mandatory",
+    "qco_document": "QCO_Safety_Household_Electrical_Appliances_2026.pdf",
+    "effective_date": "2026-04-06",
+    "quality_control_order": "Safety of Household, Commercial and Similar Electrical Appliances Quality Control Order, 2026",
+    "reason": "General safety standard associated with covered household electrical appliances."
+  },
+  {
+    "standard_number": "IS 16102",
+    "product": "LED Bulb",
+    "qco_status": "Mandatory",
+    "qco_document": "LED_Lamps_Quality_Control_Order.pdf",
+    "effective_date": "2025-01-01",
+    "quality_control_order": "LED Lamps Quality Control Order",
+    "reason": "LED lighting products are covered under compulsory certification requirements."
+  },
+  {
+    "standard_number": "IS 2347",
+    "product": "Pressure Cooker",
+    "qco_status": "Mandatory",
+    "qco_document": "Pressure_Cooker_QCO.pdf",
+    "effective_date": "2021-01-01",
+    "quality_control_order": "Pressure Cooker Quality Control Order",
+    "reason": "Pressure cookers are covered under BIS mandatory certification."
+  }
+]

@@ -1,0 +1,94 @@
+{
+  "What is the scope of IS 302-1?": [
+    {
+      "document": "302_1.pdf",
+      "page": 3,
+      "clause": "Unknown",
+      "similarity_score": 0.77,
+      "text_snippet": "Indian Standard\nSAFETY OF HOUSEHOLD AND SIMILAR ELECTRICAL\nAPPLIANCES\nPART 1 GENERAL REQUIREMENTS\n( Sixth Revision )\nstandard are encouraged to investigate the possibility\nof applying the most recent ..."
+    },
+    {
+      "document": "302_1.pdf",
+      "page": 2,
+      "clause": "Unknown",
+      "similarity_score": 0.6,
+      "text_snippet": "Electrical Appliances Sectional Committee, ETD 32\nl'-i()REW(')RD\nThis Indian Standard (Part 1) (Sixth Revision) was adopted by the Bureau of Indian Standards, after the draft\nfinalized by the Electric..."
+    },
+    {
+      "document": "302_1.pdf",
+      "page": 2,
+      "clause": "Unknown",
+      "similarity_score": 0.6,
+      "text_snippet": "comply. Consequently, compliance with this standard is not in itself a complete guarantee either of safety or\nperforn'tance of an appliance.\nThis standard was originally published in 1951 and revised ..."
+    }
+  ],
+  "What are the general conditions for tests?": [
+    {
+      "document": "302_1.pdf",
+      "page": 8,
+      "clause": "Unknown",
+      "similarity_score": 0.81,
+      "text_snippet": "'\noperating conditions.\nNOTE \u2014\u2014\u2014 Parts of the circuit may also be used for functional\npurposes.\n3.9.4 Software Class B \u2014\u2014 Software that includes code\nintended to prevent hazards if a fault, other than..."
+    },
+    {
+      "document": "302_1.pdf",
+      "page": 60,
+      "clause": "Unknown",
+      "similarity_score": 0.81,
+      "text_snippet": "IS 302-1 : 2008\n5 GENERAL CONDITIONS FOR THE TESTS\n5.101 When appliances are supplied from the supply\nmains, they are tested as speci\ufb01ed for motor-operated\nappliances.\n7 MARKING AND INSTRUCTIONS\n7.1\nT..."
+    },
+    {
+      "document": "302_1.pdf",
+      "page": 72,
+      "clause": "Clause 5.14",
+      "similarity_score": 0.81,
+      "text_snippet": "IS 302-1 : 2008\nANNEX P\n(Clause 5.14)\nGUIDANCE FOR THE APPLICATION OF THIS STANDARD TO APPLIANCES USED IN WARM\nDAMP EQUABLE CLIMATES\nThe following modifications to this standard are\napplicable for Cla..."
+    }
+  ],
+  "What is a Class II appliance?": [
+    {
+      "document": "302_1.pdf",
+      "page": 5,
+      "clause": "Unknown",
+      "similarity_score": 0.77,
+      "text_snippet": "the event of a failure of basic insulation.\n3.3.3 Double Insulation ..__ Insulation system comprising\nboth basic insulation and supplementary insulation.\n3.3.4 Reinforced Insulation -\u2014- Single insulat..."
+    },
+    {
+      "document": "302_1.pdf",
+      "page": 5,
+      "clause": "Unknown",
+      "similarity_score": 0.77,
+      "text_snippet": "between live parts and accessible conductive parts of\nclass II constructions so that the current, in normal use\nand under likely fault conditions in the appliance, is\nlimited to a safe value.\n3.3.7 Cl..."
+    },
+    {
+      "document": "302_1.pdf",
+      "page": 6,
+      "clause": "Unknown",
+      "similarity_score": 0.77,
+      "text_snippet": "conductor in the supply cord.\n3.3.10 Class ll Appliance \u2014\u2014 Appliance in which\nprotection against electric shock does not rely on basic\ninsulation only but in which additional safety\nprecautions are pr..."
+    }
+  ],
+  "What markings are required on appliances?": [
+    {
+      "document": "302_1.pdf",
+      "page": 8,
+      "clause": "Unknown",
+      "similarity_score": 0.6,
+      "text_snippet": "Unless otherwise specified, the tests are carried out in\naccordance with this clause.\n5.1 Tests according to this standard are type tests.\nNOTES\n1 Routine tests are described in Annex A.\n2 Schedule of..."
+    },
+    {
+      "document": "302_1.pdf",
+      "page": 10,
+      "clause": "Unknown",
+      "similarity_score": 0.6,
+      "text_snippet": "water are given in IS l2063.\n7 MARKING AND INSTRUCTIONS\n7.1 Appliances shall be marked with the:\na)\nRated voltage or rated voltage range, in volts;\nb)\nSymbol for nature of supply, unless the rated\nfre..."
+    },
+    {
+      "document": "302_1.pdf",
+      "page": 13,
+      "clause": "Unknown",
+      "similarity_score": 0.6,
+      "text_snippet": "a)\nthe maximum inlet water pressure, in pascals;\nand\nb)\nthe minimum inlet water pressure, in pascals,\nif this is necessary for the correct operation\nof the appliance.\nThe instructions for appliancesco..."
+    }
+  ]
+}

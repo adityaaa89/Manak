@@ -1,0 +1,81 @@
+[
+  {
+    "query": "How can a manufacturer get BIS certification?",
+    "detected_categories": [
+      "Certification",
+      "Standard"
+    ],
+    "top_documents": [
+      {
+        "title": "BIS Product Certification Scheme (V2)",
+        "categories": [
+          "Certification",
+          "Standard"
+        ],
+        "source_type": "BIS Official Standard",
+        "score": 1.0157
+      },
+      {
+        "title": "BIS Product Certification Scheme",
+        "categories": [
+          "Certification"
+        ],
+        "source_type": "Other",
+        "score": 0.9157
+      }
+    ]
+  },
+  {
+    "query": "What tests are required for electric kettle?",
+    "detected_categories": [
+      "Testing",
+      "Standard"
+    ],
+    "top_documents": [
+      {
+        "title": "STI for Electric Kettle (V2)",
+        "categories": [
+          "Testing",
+          "Certification",
+          "Standard"
+        ],
+        "source_type": "BIS Official Standard",
+        "score": 1.0975
+      },
+      {
+        "title": "IS 302-2-15",
+        "categories": [
+          "Standard"
+        ],
+        "source_type": "BIS Official Standard",
+        "score": 1.0012
+      }
+    ]
+  },
+  {
+    "query": "Is this product certification mandatory?",
+    "detected_categories": [
+      "Certification",
+      "QCO",
+      "Standard"
+    ],
+    "top_documents": [
+      {
+        "title": "QCO on Electronics",
+        "categories": [
+          "QCO"
+        ],
+        "source_type": "Other",
+        "score": 0.9015
+      },
+      {
+        "title": "QCO on Electronics (V2)",
+        "categories": [
+          "QCO"
+        ],
+        "source_type": "Other",
+        "score": 0.9015
+      }
+    ]
+  }
+]

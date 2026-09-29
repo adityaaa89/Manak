@@ -1,0 +1,68 @@
+[
+  {
+    "standard_number": "IS 302-2-15:2025",
+    "certification_scheme": "Scheme-I",
+    "certification_type": "BIS Licence",
+    "marking": {
+      "mark": "ISI Mark",
+      "identifier": "CM/L Number"
+    },
+    "certification_documents": [
+      "BIS_Conformity_Assessment_Regulations_2018.pdf",
+      "BIS_Grant_of_Licence_Guidelines.pdf",
+      "BIS_Scheme_I_Additional_Guidelines.pdf"
+    ],
+    "journey": [
+      "Identify applicable standard",
+      "Check QCO applicability",
+      "Submit BIS licence application",
+      "Product testing",
+      "Factory inspection",
+      "Grant of licence",
+      "Surveillance"
+    ]
+  },
+  {
+    "standard_number": "IS 302-1:2008",
+    "certification_scheme": "Scheme-I",
+    "certification_type": "BIS Licence",
+    "marking": {
+      "mark": "ISI Mark",
+      "identifier": "CM/L Number"
+    },
+    "certification_documents": [
+      "BIS_Conformity_Assessment_Regulations_2018.pdf",
+      "BIS_Grant_of_Licence_Guidelines.pdf"
+    ],
+    "journey": [
+      "Application submission",
+      "Testing",
+      "Factory assessment",
+      "Licence approval"
+    ]
+  },
+  {
+    "standard_number": "IS 16102",
+    "certification_scheme": "Scheme-I",
+    "certification_type": "BIS Licence",
+    "marking": {
+      "mark": "ISI Mark",
+      "identifier": "CM/L Number"
+    },
+    "certification_documents": [
+      "BIS_Conformity_Assessment_Regulations_2018.pdf"
+    ]
+  },
+  {
+    "standard_number": "IS 2347",
+    "certification_scheme": "Scheme-I",
+    "certification_type": "BIS Licence",
+    "marking": {
+      "mark": "ISI Mark",
+      "identifier": "CM/L Number"
+    },
+    "certification_documents": [
+      "BIS_Grant_of_Licence_Guidelines.pdf"
+    ]
+  }
+]

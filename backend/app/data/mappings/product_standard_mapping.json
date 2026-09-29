@@ -1,0 +1,81 @@
+[
+  {
+    "product_id": "PROD_ELECTRIC_KETTLE",
+    "product_name": "Electric Kettle",
+    "category": "Household Electrical Appliance",
+    "description": "Electrical appliance used for heating water for domestic use.",
+    "applicable_standards": [
+      {
+        "standard_number": "IS 302-2-15:2025",
+        "title": "Safety of Household and Similar Electrical Appliances - Particular Requirements for Appliances for Heating Liquids",
+        "confidence_score": 0.96,
+        "reason": [
+          "Product category matches electrical household appliance",
+          "Heating liquid application matches standard scope",
+          "Product type matches electric kettle requirements"
+        ]
+      },
+      {
+        "standard_number": "IS 302-1:2008",
+        "title": "Safety of Household and Similar Electrical Appliances - General Requirements",
+        "confidence_score": 0.91,
+        "reason": [
+          "General electrical appliance safety requirement",
+          "Applicable as base safety standard"
+        ]
+      }
+    ]
+  },
+  {
+    "product_id": "PROD_PRESSURE_COOKER",
+    "product_name": "Pressure Cooker",
+    "category": "Kitchen Appliance",
+    "description": "Domestic pressure cooking appliance.",
+    "applicable_standards": [
+      {
+        "standard_number": "IS 2347",
+        "title": "Aluminium Alloy and Stainless Steel Pressure Cookers",
+        "confidence_score": 0.94,
+        "reason": [
+          "Product category matches pressure cooking appliance",
+          "Material and usage match standard scope"
+        ]
+      }
+    ]
+  },
+  {
+    "product_id": "PROD_LED_BULB",
+    "product_name": "LED Bulb",
+    "category": "Lighting Equipment",
+    "description": "LED based electric lighting product.",
+    "applicable_standards": [
+      {
+        "standard_number": "IS 16102",
+        "title": "Self-Ballasted LED Lamps",
+        "confidence_score": 0.95,
+        "reason": [
+          "Lighting product category matched",
+          "LED technology matched"
+        ]
+      }
+    ]
+  },
+
+
+{ 
+ "product_id":"PROD_ELECTRIC_OVEN",
+ "product_name":"Electric Oven",
+ "category":"Household Electrical Appliance",
+ "applicable_standards":[
+   {
+    "standard_number":"IS 302-2-6",
+    "title":"Safety of Household and Similar Electrical Appliances - Particular Requirements for Electric Ovens",
+    "confidence_score":0.95,
+    "reason":[
+      "Product category matched",
+      "Cooking appliance detected",
+      "Heating appliance scope matched"
+    ]
+   }
+ ]
+}]
