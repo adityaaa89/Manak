@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import logoImg from '@/assets/logo.png';
+import logoImg from '@/assets/manak-logo.png';
 import {
   Menu, X, ChevronDown, Globe, LogIn,
   Shield

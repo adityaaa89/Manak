@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Shield, ExternalLink, Mail, Phone, MapPin } from 'lucide-react';
-import logoImg from '@/assets/logo.png';
+import logoImg from '@/assets/manak-logo.png';
 
 export default function Footer() {
   return (
