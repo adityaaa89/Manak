@@ -113,7 +113,7 @@ class BlueprintGeneratorService:
                 "matching_reason": lab.get("matching_reason", [])
             })
             
-        readiness_result = self.readiness_engine.assess_readiness(standard_id, {})
+        readiness_result = self.readiness_engine.calculate_readiness(standard_id, {})
         readiness_out = {
             "score": readiness_result.get("overall_score", 0),
             "critical_gaps": readiness_result.get("critical_gaps", [])
