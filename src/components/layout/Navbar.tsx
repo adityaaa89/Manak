@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logoImg from '@/assets/logo.png';
 import {
   Menu, X, ChevronDown, Globe, LogIn,
   Shield
@@ -59,7 +60,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 flex-shrink-0">
-              <img src="/logo.png" alt="Manak Logo" className="h-12 w-auto object-contain" />
+              <img src={logoImg} alt="Manak Logo" className="h-12 w-auto object-contain" />
             </Link>
 
             {/* Desktop nav links */}
