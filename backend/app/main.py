@@ -22,6 +22,12 @@ def health_check():
     """Basic health check endpoint."""
     return {"status": "healthy", "service": settings.PROJECT_NAME}
 
+@app.get("/")
+def root():
+    """Root endpoint for pinging services."""
+    return {"status": "online", "message": "Manak API is running"}
+
+
 from app.routes import products, standards, qco, testing, readiness, labs, blueprint, documents, rag, verification, demo
 
 app.include_router(products.router, prefix=settings.API_V1_STR)
