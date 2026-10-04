@@ -47,6 +47,7 @@ export interface StandardMatch {
   qco_status: string;
   confidence_score: number;
   matching_reason: string[];
+  explanation?: string;
 }
 
 export interface StandardsDiscoverResponse {
@@ -166,6 +167,7 @@ export interface BlueprintGenerateResponse {
   testing_requirements: TestingReqInfo[];
   recommended_labs: LabRecInfo[];
   generated_at: string;
+  certification_scheme?: any;
   explanation?: {
     decision: string;
     confidence: string;
@@ -193,6 +195,11 @@ export interface RagQueryResponse {
   answer: any;
   confidence: string;
   sources: Citation[];
+  explanation?: {
+    decision: string;
+    confidence: string;
+    reasoning: string[];
+  };
 }
 
 // Verification API

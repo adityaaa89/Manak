@@ -22,6 +22,7 @@ def health_check():
     """Basic health check endpoint."""
     return {"status": "healthy", "service": settings.PROJECT_NAME}
 
+@app.head("/")
 @app.get("/")
 def root():
     """Root endpoint for pinging services."""
