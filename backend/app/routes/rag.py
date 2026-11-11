@@ -72,7 +72,11 @@ def handle_chat_query(request: ChatQueryRequest, db: Session = Depends(get_db)):
                 intent=retrieval_results.get("intent", {}).get("intent", "General"),
                 detected_product=retrieval_results.get("detected_product"),
                 sources=[],
-                explanation={"decision": "Filtered out unrelated product", "reason": retrieval_results["error"]}
+                explanation={
+                    "decision": "Filtered out unrelated product",
+                    "confidence": "Medium",
+                    "reasoning": [retrieval_results["error"]]
+                }
             )
             
         retrieved_chunks = retrieval_results.get("chunks", [])

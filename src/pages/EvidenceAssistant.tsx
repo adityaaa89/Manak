@@ -117,14 +117,18 @@ function MessageBubble({ msg, showEvidence, onToggleEvidence }: {
             mode === 'simple'
               ? msg.content.replace(/\*\*.*?\*\*/g, '').replace(/\n+/g, ' ').substring(0, 200) + '...'
               : msg.content
-          ) : (
+          ) : msg.content && typeof msg.content === 'object' ? (
             <div className="space-y-4">
               {/* 1. Direct Answer */}
-              {msg.content.direct_answer && (
+              {msg.content.direct_answer ? (
                 <div className="bg-white p-3 rounded border border-gray-200">
-                  <p>{msg.content.direct_answer}</p>
+                  <p>{typeof msg.content.direct_answer === 'string' ? msg.content.direct_answer : JSON.stringify(msg.content.direct_answer)}</p>
                 </div>
-              )}
+              ) : msg.content.answer ? (
+                <div className="bg-white p-3 rounded border border-gray-200">
+                  <p>{typeof msg.content.answer === 'string' ? msg.content.answer : JSON.stringify(msg.content.answer)}</p>
+                </div>
+              ) : null}
               
               {/* 2 & 3. Compliance & Standard */}
               <div className="grid grid-cols-2 gap-3">
@@ -132,8 +136,8 @@ function MessageBubble({ msg, showEvidence, onToggleEvidence }: {
                   <div className="bg-white p-3 rounded border border-gray-200">
                     <div className="font-semibold text-xs text-gray-500 uppercase">Compliance Status</div>
                     <div className="mt-1">
-                      <span className="block text-sm">Certification: <span className="font-semibold">{msg.content.compliance_status.certification_required}</span></span>
-                      <span className="block text-sm">QCO Status: <span className="font-semibold">{msg.content.compliance_status.qco_status}</span></span>
+                      <span className="block text-sm">Certification: <span className="font-semibold">{String(msg.content.compliance_status.certification_required ?? 'N/A')}</span></span>
+                      <span className="block text-sm">QCO Status: <span className="font-semibold">{String(msg.content.compliance_status.qco_status ?? 'N/A')}</span></span>
                     </div>
                   </div>
                 )}
@@ -141,20 +145,24 @@ function MessageBubble({ msg, showEvidence, onToggleEvidence }: {
                 {msg.content.applicable_standard && (
                   <div className="bg-white p-3 rounded border border-gray-200">
                     <div className="font-semibold text-xs text-gray-500 uppercase">Applicable Standard</div>
-                    <div className="mt-1 font-semibold text-sm">{msg.content.applicable_standard}</div>
+                    <div className="mt-1 font-semibold text-sm">
+                      {typeof msg.content.applicable_standard === 'object'
+                        ? (msg.content.applicable_standard.standard_number || JSON.stringify(msg.content.applicable_standard))
+                        : String(msg.content.applicable_standard)}
+                    </div>
                   </div>
                 )}
               </div>
 
               {/* 4. Journey Timeline */}
-              {msg.content.certification_path && msg.content.certification_path.length > 0 && (
+              {Array.isArray(msg.content.certification_path) && msg.content.certification_path.length > 0 && (
                 <div className="bg-white p-3 rounded border border-gray-200">
                   <div className="font-semibold text-xs text-gray-500 uppercase mb-2">Certification Path</div>
                   <div className="space-y-2 pl-2 border-l-2 border-blue-500">
                     {msg.content.certification_path.map((step: any, i: number) => (
                       <div key={i} className="relative pl-4">
                         <div className="absolute w-2 h-2 bg-blue-500 rounded-full -left-[5px] top-1.5" />
-                        <span className="text-sm font-medium">Step {step.step_number}:</span> <span className="text-sm">{step.step_title}</span>
+                        <span className="text-sm font-medium">Step {step?.step_number ?? i + 1}:</span> <span className="text-sm">{typeof step === 'object' ? (step?.step_title || JSON.stringify(step)) : String(step)}</span>
                       </div>
                     ))}
                   </div>
@@ -163,34 +171,42 @@ function MessageBubble({ msg, showEvidence, onToggleEvidence }: {
 
               {/* 5, 6, 7. Lists */}
               <div className="grid grid-cols-1 gap-3">
-                {msg.content.required_documents && msg.content.required_documents.length > 0 && (
+                {Array.isArray(msg.content.required_documents) && msg.content.required_documents.length > 0 && (
                   <div className="bg-white p-3 rounded border border-gray-200">
                     <div className="font-semibold text-xs text-gray-500 uppercase mb-2">Required Documents</div>
                     <ul className="list-disc pl-5 text-sm">
-                      {msg.content.required_documents.map((doc: string, i: number) => <li key={i}>{doc}</li>)}
+                      {msg.content.required_documents.map((doc: any, i: number) => (
+                        <li key={i}>{typeof doc === 'string' ? doc : JSON.stringify(doc)}</li>
+                      ))}
                     </ul>
                   </div>
                 )}
                 
-                {msg.content.testing_requirements && msg.content.testing_requirements.length > 0 && (
+                {Array.isArray(msg.content.testing_requirements) && msg.content.testing_requirements.length > 0 && (
                   <div className="bg-white p-3 rounded border border-gray-200">
                     <div className="font-semibold text-xs text-gray-500 uppercase mb-2">Testing Requirements</div>
                     <ul className="list-disc pl-5 text-sm">
-                      {msg.content.testing_requirements.map((test: string, i: number) => <li key={i}>{test}</li>)}
+                      {msg.content.testing_requirements.map((test: any, i: number) => (
+                        <li key={i}>{typeof test === 'string' ? test : (test?.name || JSON.stringify(test))}</li>
+                      ))}
                     </ul>
                   </div>
                 )}
                 
-                {msg.content.recommended_laboratories && msg.content.recommended_laboratories.length > 0 && (
+                {Array.isArray(msg.content.recommended_laboratories) && msg.content.recommended_laboratories.length > 0 && (
                   <div className="bg-white p-3 rounded border border-gray-200">
                     <div className="font-semibold text-xs text-gray-500 uppercase mb-2">Recommended Laboratories</div>
                     <ul className="list-disc pl-5 text-sm">
-                      {msg.content.recommended_laboratories.map((lab: string, i: number) => <li key={i}>{lab}</li>)}
+                      {msg.content.recommended_laboratories.map((lab: any, i: number) => (
+                        <li key={i}>{typeof lab === 'string' ? lab : (lab?.name || JSON.stringify(lab))}</li>
+                      ))}
                     </ul>
                   </div>
                 )}
               </div>
             </div>
+          ) : (
+            <div>{String(msg.content ?? '')}</div>
           )}
           
           {/* Explainability Card */}
@@ -203,19 +219,23 @@ function MessageBubble({ msg, showEvidence, onToggleEvidence }: {
               <div className="grid grid-cols-2 gap-4 mb-3 text-sm">
                 <div>
                   <span className="text-blue-700/70 font-semibold block text-xs">Decision</span>
-                  <span className="text-blue-900 font-medium">{msg.explanation.decision}</span>
+                  <span className="text-blue-900 font-medium">{msg.explanation.decision || 'Compliance Evaluation'}</span>
                 </div>
                 <div>
                   <span className="text-blue-700/70 font-semibold block text-xs">Confidence</span>
-                  <span className="text-blue-900 font-medium">{msg.explanation.confidence}</span>
+                  <span className="text-blue-900 font-medium">{msg.explanation.confidence || 'Standard'}</span>
                 </div>
               </div>
               <div className="text-sm">
                 <span className="text-blue-700/70 font-semibold block text-xs mb-1">Reasoning Factors</span>
                 <ul className="list-disc pl-5 text-blue-900 text-sm space-y-1">
-                  {msg.explanation.reasoning.map((r, i) => (
-                    <li key={i}>{r}</li>
-                  ))}
+                  {Array.isArray(msg.explanation.reasoning) && msg.explanation.reasoning.length > 0 ? (
+                    msg.explanation.reasoning.map((r, i) => (
+                      <li key={i}>{typeof r === 'string' ? r : JSON.stringify(r)}</li>
+                    ))
+                  ) : (
+                    <li>{typeof (msg.explanation as any).reason === 'string' ? (msg.explanation as any).reason : 'Analysis completed based on BIS regulatory documentation.'}</li>
+                  )}
                 </ul>
               </div>
             </div>
@@ -257,12 +277,12 @@ export default function EvidenceAssistant() {
   }, [messages, isTyping]);
 
   const activeEvidence: Evidence[] = messages
-    .filter((m): m is Message & { evidence: Evidence[] } => m.role === 'ai' && 'evidence' in m && !!m.evidence && evidenceVisible[m.id])
-    .flatMap(m => m.evidence as Evidence[]);
+    .filter((m): m is Message & { evidence: Evidence[] } => m.role === 'ai' && 'evidence' in m && Array.isArray(m.evidence) && !!evidenceVisible[m.id])
+    .flatMap(m => m.evidence);
 
   const handleSend = async () => {
-    if (!input.trim()) return;
-    const userMsg: Message = { id: Date.now(), role: 'user', content: input };
+    if (!input.trim() || isTyping) return;
+    const userMsg: Message = { id: Date.now(), role: 'user', content: input.trim() };
     setMessages(prev => [...prev, userMsg]);
     setInput('');
     setIsTyping(true);
@@ -276,36 +296,52 @@ export default function EvidenceAssistant() {
         context_standard: 'IS 302-2-15'
       });
       
-      const mappedEvidence: Evidence[] = res.sources.map((src, i) => ({
+      const rawSources = Array.isArray(res?.sources) ? res.sources : [];
+      const mappedEvidence: Evidence[] = rawSources.map((src: any, i: number) => ({
         id: `ev-${Date.now()}-${i}`,
-        documentName: src.document,
+        documentName: src?.document || 'BIS Document',
         standardNumber: 'IS 302-2-15',
-        clause: src.clause,
-        page: src.page,
+        clause: src?.clause || '-',
+        page: String(src?.page ?? '-'),
         source: 'BIS',
         status: 'Active',
-        confidence: res.confidence || 'High',
-        excerpt: src.excerpt
+        confidence: res?.confidence || 'High',
+        excerpt: src?.excerpt || ''
       }));
+
+      let formattedExplanation = res?.explanation;
+      if (formattedExplanation) {
+        const reasoningList = Array.isArray(formattedExplanation.reasoning)
+          ? formattedExplanation.reasoning
+          : [(formattedExplanation as any).reason || 'Derived directly from official standards repository.'];
+        formattedExplanation = {
+          decision: formattedExplanation.decision || 'Compliance Evaluation',
+          confidence: formattedExplanation.confidence || res?.confidence || 'High',
+          reasoning: reasoningList
+        };
+      }
 
       const aiMsgId = Date.now() + 1;
       const aiMsg: Message = {
         id: aiMsgId,
         role: 'ai',
-        content: res.answer,
+        content: res?.answer ?? 'No specific compliance information found for this query.',
         evidence: mappedEvidence,
-        explanation: res.explanation,
+        explanation: formattedExplanation,
       };
       
       setMessages(prev => [...prev, aiMsg]);
-      // Auto-expand evidence for the new response
-      setEvidenceVisible(prev => ({ ...prev, [aiMsgId]: true }));
+      // Auto-expand evidence for the new response if evidence is available
+      if (mappedEvidence.length > 0) {
+        setEvidenceVisible(prev => ({ ...prev, [aiMsgId]: true }));
+      }
     } catch (err: any) {
-      console.error(err);
+      console.error('Evidence Assistant Error:', err);
+      const detailMsg = err?.response?.data?.detail || err?.message || 'Server connection failed';
       setMessages(prev => [...prev, {
         id: Date.now() + 2,
         role: 'ai',
-        content: 'Sorry, I encountered an error while trying to fetch the information. Please try again later.'
+        content: `I encountered an issue connecting to the compliance assistant backend (${detailMsg}). If running in production, please verify the backend API service is deployed and accessible.`
       }]);
     } finally {
       setIsTyping(false);
@@ -390,12 +426,21 @@ export default function EvidenceAssistant() {
                   type="text"
                   value={input}
                   onChange={e => setInput(e.target.value)}
-                  onKeyDown={e => e.key === 'Enter' && handleSend()}
+                  onKeyDown={e => {
+                    if (e.key === 'Enter') {
+                      e.preventDefault();
+                      handleSend();
+                    }
+                  }}
                   placeholder="Ask about testing requirements, documents, fees, certification process..."
                   className="flex-1 px-4 py-2.5 bg-transparent text-sm focus:outline-none text-gray-800 placeholder:text-gray-400"
                 />
                 <button
-                  onClick={handleSend}
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSend();
+                  }}
                   disabled={!input.trim() || isTyping}
                   className="p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 hover:shadow-md transition-all shadow-sm disabled:opacity-40 disabled:cursor-not-allowed shrink-0 flex items-center justify-center"
                 >
