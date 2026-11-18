@@ -31,14 +31,21 @@ def root():
 
 from app.routes import products, standards, qco, testing, readiness, labs, blueprint, documents, rag, verification, demo
 
-app.include_router(products.router, prefix=settings.API_V1_STR)
-app.include_router(standards.router, prefix=settings.API_V1_STR)
-app.include_router(qco.router, prefix=settings.API_V1_STR)
-app.include_router(testing.router, prefix=settings.API_V1_STR)
-app.include_router(readiness.router, prefix=settings.API_V1_STR)
-app.include_router(labs.router, prefix=settings.API_V1_STR)
-app.include_router(blueprint.router, prefix=settings.API_V1_STR)
-app.include_router(documents.router, prefix=settings.API_V1_STR)
-app.include_router(rag.router, prefix=settings.API_V1_STR)
-app.include_router(verification.router, prefix=settings.API_V1_STR)
-app.include_router(demo.router, prefix=settings.API_V1_STR)
+api_routers = [
+    products.router,
+    standards.router,
+    qco.router,
+    testing.router,
+    readiness.router,
+    labs.router,
+    blueprint.router,
+    documents.router,
+    rag.router,
+    verification.router,
+    demo.router,
+]
+
+# Support both /api/* and root /* endpoints to prevent 404s from URL configuration mismatches
+for router in api_routers:
+    app.include_router(router, prefix=settings.API_V1_STR)
+    app.include_router(router)

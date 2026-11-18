@@ -1,6 +1,9 @@
 import axios, { AxiosError } from 'axios';
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api';
+const rawBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api';
+// Normalize URL: ensure it always points to the '/api' prefix without trailing or double slashes
+const cleanUrl = rawBaseUrl.trim().replace(/\/+$/, '');
+const BASE_URL = cleanUrl.endsWith('/api') ? cleanUrl : `${cleanUrl}/api`;
 
 const apiClient = axios.create({
   baseURL: BASE_URL,
